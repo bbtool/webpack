@@ -1,0 +1,17 @@
+{
+  "pluginName": "{{ pluginName }}",
+  "version": "1.0.0",
+  "author": "{{ author }}",
+  "homepage": "{{ homepage }}",
+  "logo": "logo.png",
+  "main": "index.html",
+  "description": "{{ description }}",
+  "features": {
+    "searchable": {
+      "cmds": [
+        "{{ keyword }}"
+      ]
+    },
+    "filterable": true
+  }
+}

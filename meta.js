@@ -19,7 +19,7 @@ module.exports = {
     before: addTestAnswers
   },
   helpers: {
-    if_or(v1, v2, options) {
+    if_or (v1, v2, options) {
 
       if (v1 || v2) {
         return options.fn(this)
@@ -27,11 +27,11 @@ module.exports = {
 
       return options.inverse(this)
     },
-    template_version() {
+    template_version () {
       return templateVersion
     },
   },
-  
+
   prompts: {
     name: {
       when: 'isNotTest',
@@ -39,17 +39,27 @@ module.exports = {
       required: true,
       message: 'Project name',
     },
-    description: {
-      when: 'isNotTest',
-      type: 'string',
-      required: false,
-      message: 'Project description',
-      default: 'A Vue.js project',
+    "author": {
+      "type": "string",
+      "label": "作者"
     },
-    author: {
-      when: 'isNotTest',
-      type: 'string',
-      message: 'Author',
+    "pluginName": {
+      "type": "string",
+      "required": true,
+      "label": "插件名称"
+    },
+    "description": {
+      "type": "string",
+      "required": true,
+      "label": "插件描述"
+    },
+    "homepage": {
+      "type": "string",
+      "label": "主页"
+    },
+    "keyword": {
+      "type": "string",
+      "label": "搜索关键词"
     },
     build: {
       when: 'isNotTest',
@@ -171,7 +181,7 @@ module.exports = {
     'test/e2e/**/*': 'e2e',
     'src/router/**/*': 'router',
   },
-  complete: function(data, { chalk }) {
+  complete: function (data, { chalk }) {
     const green = chalk.green
 
     sortDependencies(data, green)
